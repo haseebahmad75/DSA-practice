@@ -28,6 +28,17 @@ Node* insert(Node* root, int value)
     return root;
 }
 
+bool search(Node*root, int target)
+{
+    if(root == nullptr) return false;
+    if(target == root->data) return true;
+    if(target < root->data)
+    {
+        return search(root->left,target);
+    }
+    return search(root->right, target);
+}
+
 void inOrder(Node*root)
 {
     if(root == nullptr) return; // root acts as root of whole tree, when this function is called 1st time, and then act as the root of a subtree
@@ -47,6 +58,19 @@ int main()
 
     cout<< "Sorted tree (inOrder): ";
     inOrder(root);
+
+    int target;
+    cout<<"\nEnter target: ";
+    cin>>target;
+    
+    if(search(root,target))
+    {
+        cout<<"Node exists";
+    }
+    else
+    {
+        cout<<"Node does not exist";
+    }
     return 0;
 }
 
