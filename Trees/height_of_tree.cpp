@@ -21,6 +21,14 @@ int FindHeight(Node* root)
     return max(leftHeight, rightHeight) + 1;
 }
 
+void InOrder(Node* root)
+{
+    if(root == nullptr) return;
+    InOrder(root->left);
+    cout<<root->data <<"  ";
+    InOrder(root->right);  
+}
+
 int main()
 {
     Node* root = new Node(30);
@@ -29,6 +37,9 @@ int main()
     root->left->left = new Node(15);
     root->right->right = new Node(40);
 
-    cout<<"Height of tree: " <<FindHeight(root);
+    cout<<"Height of tree: " <<FindHeight(root) <<endl;
+
+    cout<<"InOrder traversal of tree: "; 
+    InOrder(root);
 
 }
