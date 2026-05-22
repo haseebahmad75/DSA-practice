@@ -12,7 +12,7 @@ struct Node
 
 Node* insert(Node* root, int value)
 {
-    if(root == nullptr)
+    if(root == nullptr) // base case
     {
         return new Node(value); // creates a new node and return its address
     }
@@ -52,17 +52,19 @@ int main()
     Node* root = nullptr;
     root = insert(root,50);
     insert(root,30);
-    insert(root,70);
     insert(root,20);
+    insert(root,35);
+    insert(root,70);
     insert(root,40);
-
+    insert(root,75);
+    
     cout<< "Sorted tree (inOrder): ";
     inOrder(root);
 
     int target;
     cout<<"\nEnter target: ";
     cin>>target;
-    
+
     if(search(root,target))
     {
         cout<<"Node exists";
