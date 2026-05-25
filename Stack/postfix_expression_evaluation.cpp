@@ -18,7 +18,7 @@ int Perform(int v1, int v2, char op)
 int EvaluatePostfix(char C[])
 {
     stack<int> S; // Operators(+, -, *, /) are never stored in the stack, they are only used to compute.
-    
+
     for(int i = 0; i < strlen(C); i++)
     {
         if(C[i] >= '0' && C[i] <= '9')
@@ -41,9 +41,7 @@ int EvaluatePostfix(char C[])
         }
     }
     return S.top(); // returns the final result of expression
-
 }
-
 
 int main()
 {
@@ -55,6 +53,5 @@ int main()
     cin.getline(C,30);
 
     cout<<"Final Evaluation: " <<EvaluatePostfix(C);
-
 
 }
