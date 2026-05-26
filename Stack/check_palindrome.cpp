@@ -1,6 +1,6 @@
 #include<iostream>
 #include<stack>
-#include<cstring>
+#include<string>
 using namespace std;
 
 // Palindrome string means if you reverse the string, it stays unchanged.
